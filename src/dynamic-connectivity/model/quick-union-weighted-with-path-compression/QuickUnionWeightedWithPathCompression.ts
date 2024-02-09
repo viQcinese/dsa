@@ -1,4 +1,6 @@
-export class QuickUnion {
+import { UnionFind } from "../../../model/UnionFind";
+
+export class QuickUnion implements UnionFind {
   parents: number[];
   weights: number[];
 
@@ -15,7 +17,7 @@ export class QuickUnion {
     return a;
   }
 
-  connected(a: number, b: number) {
+  isConnected(a: number, b: number) {
     return this.parent(a) === this.parent(b);
   }
 

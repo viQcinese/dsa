@@ -59,6 +59,6 @@ export class Percolation {
   }
 
   percolates() {
-    return this.quickUnion.connected(this.startId, this.endId);
+    return this.quickUnion.isConnected(this.startId, this.endId);
   }
 }

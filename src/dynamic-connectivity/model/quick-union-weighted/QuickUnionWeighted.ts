@@ -3,7 +3,9 @@
 // Depth of any node X is at most log (base 2) of N (lgN)
 // Defect: Trees can get tall. parent operation is too expensive (could be N array accesses)
 
-export class QuickUnion {
+import { UnionFind } from "../../../model/UnionFind";
+
+export class QuickUnion implements UnionFind {
   parents: number[];
   weights: number[];
 
@@ -19,7 +21,7 @@ export class QuickUnion {
     return a;
   }
 
-  connected(a: number, b: number) {
+  isConnected(a: number, b: number) {
     return this.parent(a) === this.parent(b);
   }
 
